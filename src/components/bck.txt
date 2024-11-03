@@ -1,0 +1,384 @@
+import React from 'react';
+
+const Contact = () => {
+  return (
+    <section
+      className="relative w-full h-screen mx-auto px-4 md:px-16 py-12 overflow-y-hidden bg-[#120712]"
+    >
+      <h1 className="absolute top-44 text-[8rem] md:text-[15rem] font-bold text-gray-700 opacity-15 z-0">
+        Contact Me
+      </h1>
+      <div className="flex flex-col items-center gap-3 mb-8">
+        <h2 className="font-extrabold text-5xl md:text-7xl text-neutral-100">
+          Let's
+        </h2>
+        <h2 className="font-extrabold text-5xl md:text-7xl bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent">
+          Talk
+        </h2>
+      </div>
+      <div className="container flex flex-wrap justify-center gap-10 mx-auto max-w-5xl">
+        {/* Contact Info */}
+        <div className="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+          <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent">
+            Ash Sams Md Tanvir Jahan
+          </h2>
+          <p className="text-blue-400 text-lg mb-2">Front-End Developer</p>
+          <p className="text-white/80 leading-relaxed mb-5">
+            I am available for freelance work. Connect with me via phone or email.
+          </p>
+          <div className="text-white/90 space-y-4">
+            <div className="flex items-center gap-3 transition-transform duration-300 hover:translate-x-2 hover:bg-blue-600/10 p-2 rounded-md">
+              <span className="text-blue-400 text-xl">📱</span>
+              <p>Phone: +8801705536373</p>
+            </div>
+            <div className="flex items-center gap-3 transition-transform duration-300 hover:translate-x-2 hover:bg-blue-600/10 p-2 rounded-md">
+              <span className="text-blue-400 text-xl">📧</span>
+              <p>Email: tanvirjahan98@gmail.com</p>
+            </div>
+          </div>
+          <div className="flex gap-4 mt-6">
+            <a href="#" className="w-10 h-10 bg-blue-600/10 text-blue-400 rounded-full flex items-center justify-center hover:bg-gradient-to-r from-blue-400 to-blue-700 hover:text-white transform hover:scale-110 transition-all duration-300">
+              <i className="fab fa-facebook-square"></i>
+            </a>
+            <a href="#" className="w-10 h-10 bg-blue-600/10 text-blue-400 rounded-full flex items-center justify-center hover:bg-gradient-to-r from-blue-400 to-blue-700 hover:text-white transform hover:scale-110 transition-all duration-300">
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a href="#" className="w-10 h-10 bg-blue-600/10 text-blue-400 rounded-full flex items-center justify-center hover:bg-gradient-to-r from-blue-400 to-blue-700 hover:text-white transform hover:scale-110 transition-all duration-300">
+              <i className="fab fa-github-square"></i>
+            </a>
+          </div>
+        </div>
+        
+        {/* Contact Form */}
+        <div className="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+          <form id="contactForm" className="space-y-4">
+            <div>
+              <input
+                type="text"
+                id="name"
+                name="from_name"
+                placeholder="YOUR NAME *"
+                required
+                className="w-full p-4 rounded-lg bg-transparent border border-blue-600/10 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:bg-blue-600/5 transition-colors"
+              />
+            </div>
+            <div>
+              <input
+                type="tel"
+                id="phone"
+                name="from_phone"
+                placeholder="PHONE NUMBER"
+                className="w-full p-4 rounded-lg bg-transparent border border-blue-600/10 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:bg-blue-600/5 transition-colors"
+              />
+            </div>
+            <div>
+              <input
+                type="email"
+                id="email"
+                name="from_email"
+                placeholder="EMAIL *"
+                required
+                className="w-full p-4 rounded-lg bg-transparent border border-blue-600/10 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:bg-blue-600/5 transition-colors"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                id="subject"
+                name="from_subject"
+                placeholder="SUBJECT *"
+                required
+                className="w-full p-4 rounded-lg bg-transparent border border-blue-600/10 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:bg-blue-600/5 transition-colors"
+              />
+            </div>
+            <div>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="YOUR MESSAGE *"
+                required
+                className="w-full p-4 rounded-lg bg-transparent border border-blue-600/10 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:bg-blue-600/5 transition-colors"
+              ></textarea>
+            </div>
+            <button
+              id="sendBtn"
+              type="submit"
+              className="px-8 py-3 bg-gradient-to-r from-blue-400 to-blue-700 text-white font-semibold rounded-lg focus:outline-none hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+            >
+              <span className="relative z-10">SEND MESSAGE</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+            </button>
+            <div
+              id="loadingSpinner"
+              className="spinner w-10 h-10 border-4 border-gray-200 border-t-blue-600 rounded-full animate-spin mx-auto mt-4"
+              style={{ display: 'none' }}
+            ></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
+
+
+
+
+import React from 'react';
+
+const Contact = () => {
+  return (
+    <section
+      className="relative w-full h-screen mx-auto px-4 md:px-16 py-5 overflow-y-hidden bg-[#120712]"
+    >
+      <h1 className="absolute top-44 text-[8rem] md:text-[15rem] font-bold text-gray-700 opacity-15 z-0">
+        Contact Me
+      </h1>
+      <div className='gap-3 flex justify-center'>
+   <h2 className="clash-grotesk font-extrabold text-7xl text-neutral-100">Let's</h2>
+   <h2 className="clash-grotesk font-extrabold text-7xl text-customText">Talk</h2>
+   </div>
+      <div className="container flex py-16 flex-wrap justify-center gap-10 mx-auto max-w-7xl">
+        {/* Contact Info */}
+        <div className="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 h-1/2 max-h-screen">
+          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent">
+          Get In Touch
+          </h2>
+          <p className="text-white/80 leading-relaxed mb-5">
+          Feel free to reach out! I'm always open to exploring new projects, fresh ideas, and opportunities to bring your vision to life.
+          </p>
+          <div className="text-white/90 space-y-4">
+            <div className="flex items-center gap-3 transition-transform duration-300 hover:translate-x-2 hover:bg-blue-600/10 p-2 rounded-md">
+              <span className="text-blue-400 text-xl">📱</span>
+              <p>Mobile: +917708528373</p>
+            </div>
+            <div className="flex items-center gap-3 transition-transform duration-300 hover:translate-x-2 hover:bg-blue-600/10 p-2 rounded-md">
+              <span className="text-blue-400 text-xl">📧</span>
+              <p>Email: mugeshkumarm356@gmail.com</p>
+            </div>
+            <div className="flex items-center gap-3 transition-transform duration-300 hover:translate-x-2 hover:bg-blue-600/10 p-2 rounded-md">
+              <span className="text-blue-400 text-xl">📱</span>
+              <p>Location: Coimbatore/Tamil Nadu/India</p>
+            </div>
+          </div>
+          <div className="flex gap-4 mt-6">
+            <a href="#" className="w-10 h-10 bg-blue-600/10 text-blue-400 rounded-full flex items-center justify-center hover:bg-gradient-to-r from-blue-400 to-blue-700 hover:text-white transform hover:scale-110 transition-all duration-300">
+              <i className="fab fa-facebook-square"></i>
+            </a>
+            <a href="#" className="w-10 h-10 bg-blue-600/10 text-blue-400 rounded-full flex items-center justify-center hover:bg-gradient-to-r from-blue-400 to-blue-700 hover:text-white transform hover:scale-110 transition-all duration-300">
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a href="#" className="w-10 h-10 bg-blue-600/10 text-blue-400 rounded-full flex items-center justify-center hover:bg-gradient-to-r from-blue-400 to-blue-700 hover:text-white transform hover:scale-110 transition-all duration-300">
+              <i className="fab fa-github-square"></i>
+            </a>
+          </div>
+        </div>
+        
+        {/* Contact Form */}
+        <div className="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 h-1/2 max-h-screen">
+          <form id="contactForm" className="space-y-4">
+            <div className='flex gap-3'>
+              <input
+                type="text"
+                id="name"
+                name="from_name"
+                placeholder="Your Name"
+                required
+                className="w-full p-4 rounded-lg bg-transparent border border-blue-600/10 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:bg-blue-600/5 transition-colors"
+              />
+              <input
+                type="email"
+                id="email"
+                name="from_email"
+                placeholder="Your Email"
+                required
+                className="w-full p-4 rounded-lg bg-transparent border border-blue-600/10 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:bg-blue-600/5 transition-colors"
+              />
+            </div>
+            <div>
+              
+            </div>
+            <div>
+              <input
+                type="text"
+                id="subject"
+                name="from_subject"
+                placeholder="Your Subject"
+                required
+                className="w-full p-4 rounded-lg bg-transparent border border-blue-600/10 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:bg-blue-600/5 transition-colors"
+              />
+            </div>
+            <div>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Your Message"
+                required
+                className="w-full p-4 rounded-lg bg-transparent border border-blue-600/10 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:bg-blue-600/5 transition-colors"
+              ></textarea>
+            </div>
+            <button
+              id="sendBtn"
+              type="submit"
+              className="px-8 py-3 bg-gradient-to-r from-blue-400 to-blue-700 text-white font-semibold rounded-lg focus:outline-none hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+            >
+              <span className="relative z-10">SEND MESSAGE</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+            </button>
+            <div
+              id="loadingSpinner"
+              className="spinner w-10 h-10 border-4 border-gray-200 border-t-blue-600 rounded-full animate-spin mx-auto mt-4"
+              style={{ display: 'none' }}
+            ></div>
+          </form>
+        </div>
+      </div>
+      <div className="font-semibold text-neutral-100 text-center">Made with {'\u2764\uFE0F'} by Mugesh Kumar</div>
+
+     
+    </section>
+  );
+};
+
+export default Contact;
+
+
+
+
+//before format
+ <div className={'w-full px-8 flex '}>
+    <Fade bottom duration={2000} direction = "down" distance="40px">
+     
+    <div className=" " style={{ width: '650px' ,marginTop:'50px' }}>
+      <div className='top-5'>
+    {/* <h2 className="text-2xl tracking-tighter text-foreground 2xl:text-8xl">Full Stack Developer</h2> */}
+    
+    <div className=' gap-8'>
+      {/* <h2 className="text-6xl tracking-tighter text-foreground 2xl:text-8xl">Hi, I'm</h2> */}
+      <h2 className="clash-grotesk font-semibold text-4xl  text-neutral-100">HELLO I'M</h2>
+      <h2 className="clash-grotesk font-bold text-8xl  text-customText">Mugesh</h2>
+      <h2 className="clash-grotesk font-bold text-8xl  text-customText ml-8">Kumar</h2>
+
+      <br/>
+        <h2 className="clash-grotesk font-bold text-4xl 2xl:text-8xl text-neutral-100">a Full Stack Developer&nbsp;</h2>
+      </div>
+      {/* <br/>
+     <p className="mt-1 max-w-lg tracking-tight font-semibold text-2xl 2xl:text-xl is-inview">
+            {text}
+          </p> */}
+    </div>
+    <br/>
+    <div className='flex gap-8'>
+    <button type="button" class="text-white bg-gradient-to-r from-customTextbt3 via-customTextbt2 to-customTextbt1 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-semibold rounded-lg text-lg px-8 py-3 text-center me-2 mb-2">
+    Download CV
+</button>
+
+<button type="button" class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-500 font-semibold rounded-lg text-lg px-8 py-3 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-customTextbt2 dark:focus:ring-purple-900">
+    Let's Talk
+</button>
+
+    </div>
+     
+
+      {/* <div className="scroll-img-div">
+        {illustration.animated ? (
+          <DisplayLottie animationData={scrollImage} />
+        ) : (
+          <img
+            alt="man sitting on table"
+            src={require("../../assets/images/header-img.svg")}
+          ></img>
+          w-[620px] h-[520px] top-[20px] right-[120px]
+        )}
+      </div> */}
+   
+    </div>
+    </Fade>
+    <div className="relative left-[40px] w-[560px] h-[440px]">
+    <Reveal cascade>
+      <Lottie loop={true}  animationData={heroImage}/>
+    </Reveal>
+    </div>
+    <div className='absolute  bottom-2 w-full flex justify-center items-center'>
+        <a href='#about'>
+        <Lottie loop={true}  animationData={scrollImage}/>
+        </a>
+      </div>
+      </div>
+
+
+
+      //before hero
+
+       <div className={"w-full p-8 sm:px-8"}>
+      <Fade bottom duration={2000} direction="down" distance="40px">
+        <div className="" style={{ width: "650px", marginTop: "50px" }}>
+          <div className="top-5">
+            {/* <h2 className="text-2xl tracking-tighter text-foreground 2xl:text-8xl">Full Stack Developer</h2> */}
+
+            <div className=" gap-8">
+              {/* <h2 className="text-6xl tracking-tighter text-foreground 2xl:text-8xl">Hi, I'm</h2> */}
+              <h2 className="clash-grotesk font-semibold text-4xl  text-neutral-100">
+                HELLO I'M
+              </h2>
+              <h2 className="clash-grotesk font-bold text-8xl  text-customText">
+                Mugesh
+              </h2>
+              <h2 className="clash-grotesk font-bold text-8xl  text-customText ml-8">
+                Kumar
+              </h2>
+
+              <br />
+              <h2 className="clash-grotesk font-bold text-4xl 2xl:text-8xl text-neutral-100">
+                a Full Stack Developer&nbsp;
+              </h2>
+            </div>
+            {/* <br/>
+             <p className="mt-1 max-w-lg tracking-tight font-semibold text-2xl 2xl:text-xl is-inview">
+            {text}
+          </p> */}
+          </div>
+          <br />
+          <div className="flex gap-8">
+            <button
+              type="button"
+              class="text-white bg-gradient-to-r from-customTextbt3 via-customTextbt2 to-customTextbt1 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-semibold rounded-lg text-lg px-8 py-3 text-center me-2 mb-2"
+            >
+              Download CV
+            </button>
+
+            <button
+              type="button"
+              class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-500 font-semibold rounded-lg text-lg px-8 py-3 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-customTextbt2 dark:focus:ring-purple-900"
+            >
+              Let's Talk
+            </button>
+          </div>
+
+          {/* <div className="scroll-img-div">
+          {illustration.animated ? (
+           <DisplayLottie animationData={scrollImage} />
+         ) : (
+          <img
+            alt="man sitting on table"
+            src={require("../../assets/images/header-img.svg")}
+          ></img>
+          w-[620px] h-[520px] top-[20px] right-[120px]
+         )}
+         </div> */}
+        </div>
+      </Fade>
+      <div className="relative left-[40px] w-[560px] h-[440px]">
+        <Reveal cascade>
+          <Lottie loop={true} animationData={heroImage} />
+        </Reveal>
+      </div>
+      <div className="absolute  bottom-2 w-full flex justify-center items-center">
+        <a href="#about">
+          <Lottie loop={true} animationData={scrollImage} />
+        </a>
+      </div>
+    </div>

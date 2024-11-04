@@ -9,20 +9,20 @@ import MotionUp from './MotionUp'; // Ensure the correct path for MotionUp compo
 const Contact = () => {
   return (
     <section
-      className="relative w-full  mx-auto p-10 overflow-y-hidden bg-[#120712]"
+      className="relative w-full  mx-auto p-10 overflow-hidden bg-[#120712] bottom-1"
     >
-      <h1 className="absolute top-44 text-[8rem] md:text-[15rem] font-bold text-gray-700 opacity-15 z-0">
+      <h1 className="absolute top-44 text-[8rem] md:text-[15rem] font-bold text-gray-700 opacity-15 z-0 rotate-90 sm:rotate-0">
         Contact Me
       </h1>
-      <div className='gap-3 flex justify-center'>
-   <h2 className=" font-extrabold text-4xl text-neutral-100">Let's</h2>
-   <h2 className=" font-extrabold text-4xl text-customText">Talk</h2>
-   </div>
-      <div className="container flex py-16 flex-wrap justify-center gap-10 mx-auto max-w-7xl">
+      <div className='gap-3 flex justify-center font-extrabold text-4xl sm:text-7xl'>
+   <h2 className="  text-neutral-100">Let's</h2>
+   <h2 className="  text-customText">Talk</h2>
+   </div> 
+      <div className="container flex py-16 flex-col justify-center  mx-auto max-w-7xl sm:flex-row">
         {/* Contact Info */}
-        <MotionUp className="mt-5 p-0  rounded-lg" delay={0}>
+        <MotionUp className=" flex flex-col gap-10 rounded-lg sm:flex-row" delay={0}>
 
-        <div className="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 h-auto max-h-screen">
+        <div className="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 h-auto max-h-screen sm:w-1/2">
           <h2 className="text-3xl font-bold mb-4 bg-customText bg-clip-text text-transparent">
           Get In Touch
           </h2>
@@ -49,10 +49,10 @@ const Contact = () => {
             </a>
           </div>
         </div>
-        </MotionUp>
+       
         {/* Contact Form */}
-        <MotionUp className=" rounded-lg" delay={0.3}>
-        <div className="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 h-auto max-h-screen">
+       
+        <div className="flex-1 bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 h-auto max-h-screen sm:w-1/2">
           <form id="contactForm" className="space-y-4">
             <div className='flex gap-3'>
               <input
@@ -98,14 +98,14 @@ const Contact = () => {
             <button
               id="sendBtn"
               type="submit"
-              className="px-8 py-3 bg-gradient-to-r from-blue-400 to-blue-700 text-white font-semibold rounded-lg focus:outline-none hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+              className="px-8 py-3 bg-gradient-to-r from-customTextbt3 to-customTextbt1 text-white font-semibold rounded-lg focus:outline-none hover:shadow-lg transition-all duration-300 relative overflow-hidden"
             >
               <h1 className="relative z-10">SEND MESSAGE</h1>
               <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
             </button>
             <div
               id="loadingSpinner"
-              className="spinner w-10 h-10 border-4 border-gray-200 border-t-blue-600 rounded-full animate-spin mx-auto mt-4"
+              className="spinner w-10 h-10 border-4 border-gray-200 border-t-customTextbt1 rounded-full animate-spin mx-auto mt-4"
               style={{ display: 'none' }}
             ></div>
           </form>

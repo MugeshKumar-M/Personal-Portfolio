@@ -48,7 +48,7 @@ export function ProjectCard() {
       <PinContainer
         title="Read More"
         onClick={handleSetModalContent}
-        className="!w-full flex justify-center h-[360px]"
+        className="!w-full flex justify-center h-[360px] "
       >
         <div className="tracking-tight text-blue-100">
           <img
@@ -91,7 +91,7 @@ function PinContainer({
     <ModalTrigger>
       <button
         className={cn(
-          "relative group/pin z-50  cursor-pointer w-full block text-left h-[400px]",
+          "relative group/pin z-40  cursor-pointer w-full block text-left h-[400px]",
           containerClassName
         )}
         onMouseEnter={onMouseEnter}

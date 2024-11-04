@@ -1,11 +1,12 @@
-import React ,{ useEffect } from 'react'
-import Header from './components/Header'
-import Hero from  './components/Hero'
-import About from  './components/About'
-import Projects from './components/Projects'
-import Experts from './components/Experts'
-import Works from './components/Works'
-import Contact from './components/Contact'
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Experts from "./components/Experts";
+import Works from "./components/Works";
+import Contact from "./components/Contact";
 import { Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import {
@@ -28,39 +29,34 @@ const App = () => {
     });
   }, [color]);
 
-  
-
-  const backgroundImage = 'radial-gradient(125% 125% at 180% 0%, #ff4dff 5%, #120712)';
+  const backgroundImage =
+    "radial-gradient(125% 125% at 180% 0%, #ff4dff 5%, #120712)";
 
   return (
-
-    <section className='relative top-0 z-0 h-screen w-full text-neutral-300 overflow-x-hidden' style={{background : backgroundImage}}>
-
-    <Header/> 
- {/* Add Stars in the background  */}
- <div className="absolute inset-0 z-[-1] pointer-events-none">
-    <Canvas>
-      <Stars radius={50} count={2500} factor={4} fade speed={2} />  
-    </Canvas>
-  </div>
-     <Hero/>
-
-     <About/>
-     <Projects/>
-              <Experts/>
-              <Works/>
-              <Contact/>
-
+    <section
+      className="relative top-0 z-0 h-screen w-full text-neutral-300 overflow-x-hidden"
+      style={{ background: backgroundImage }}
+    >
+      <Header />
+      <div className="absolute inset-0 z-[-1] pointer-events-none">
+        <Canvas>
+          <Stars radius={50} count={2500} factor={4} fade speed={2} />
+        </Canvas>
+      </div>
+      <Hero />
+      <About />
+      <Projects />
+      <Experts />
+      <Works />
+      <Contact />
     </section>
-    
-  )
-}
+  );
+};
 
 export default App;
 
-
-
-{/* <div className='relative top-0 z-0 h-full w-full text-neutral-300'>
+{
+  /* <div className='relative top-0 z-0 h-full w-full text-neutral-300'>
     
        
 <motion.section
@@ -89,4 +85,5 @@ className="relative grid min-h-screen w-screen h-screen px-4 text-gray-200 overf
   about
   </div>
   
-</div> */}
+</div> */
+}

@@ -34,19 +34,19 @@ const skills = [
 const Experts = () => {
   return (
     <section
-      className="relative w-full mx-auto p-10 overflow-y-hidden"
+      className="relative w-full mx-auto p-10 overflow-y-hidden -bottom-2"
       style={{ background: '#120712' }}
     >
       <h1 className="absolute top-40 right-14 text-[15rem] font-bold text-gray-700 opacity-15 z-0 rotate-90">
        Skills
       </h1>
 
-<h2 className="clash-grotesk font-semibold text-xl  text-customText">My Skill</h2>
-<div className='gap-3 '>
-   <h2 className="clash-grotesk font-extrabold text-4xl text-neutral-100">Growing Over</h2>
-   <h2 className="clash-grotesk font-extrabold text-4xl text-neutral-100">Times</h2>
+<h2 className="font-semibold text-xl  text-customText sm:text-4xl">My Skill</h2>
+<div className='gap-3 font-extrabold text-4xl text-neutral-100 sm:text-7xl'>
+   <h2>Growing Over</h2>
+   <h2 >&nbsp;Times</h2>
    </div>
-   <div className='font-semibold text-2xl text-left text-neutral-100 mt-8'>
+   <div className='font-semibold text-2xl text-left text-neutral-100 mt-8 sm:w-3/4'>
    <p>I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!</p>
    </div>
       <MotionUp className="mt-5 p-0  rounded-lg" delay={0.1}>

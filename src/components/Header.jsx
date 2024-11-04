@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../assets/kevinRushLogo.png";
+import { Link } from "react-router-dom";
+
 import { FaBars, FaTimes } from "react-icons/fa"; // Importing the icons
 // Uncomment these when you add the icons to your project
 // import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
@@ -12,12 +14,33 @@ const Header = () => {
     setIsOpen(prev => !prev);
   };
 
+  // const [active, setActive] = useState("");
+  // const [toggle, setToggle] = useState(false);
+  // const [scrolled, setScrolled] = useState(false);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollTop = window.scrollY;
+  //     if (scrollTop > 100) {
+  //       setScrolled(true);
+  //     } else {
+  //       setScrolled(false);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+
   return (
     <div>
-    <nav className="flex items-center justify-between pr-4 bg-transparent bg-opacity-20 backdrop-blur-lg shadow-lg">
+    <nav className=" fixed top-0 left-0 z-50 w-[98.8%] flex items-center justify-between pr-4 bg-transparent bg-opacity-20 backdrop-blur-lg shadow-lg sm:pl-6 sm:pr-6 overflow-y sm:mr-auto sm:ml-auto">
       {/* Logo */}
       <div className="flex flex-shrink-0">
+    
         <img className="mx-5 my-5 w-10" src={logo} alt="logo" />
+      
       </div>
 
       {/* Hamburger Icon for Mobile */}
@@ -56,7 +79,7 @@ const Header = () => {
      
     </nav>
     {isOpen && (
-        <div className="fixed top-0 z-10 right-0 h-full w-2/3 bg-customPurple/10 bg-opacity-50 backdrop-blur-lg p-4 text-white transition-transform duration-300 ease-in-out sm:hidden">
+        <div className="fixed top-0 z-50 right-0 h-full w-2/3 bg-customPurple/10 bg-opacity-50 backdrop-blur-lg p-4 text-white transition-transform duration-300 ease-in-out sm:hidden ">
           <div className="flex justify-end">
     <button onClick={toggleSidebar} className="text-2xl text-white">
       <FaTimes />

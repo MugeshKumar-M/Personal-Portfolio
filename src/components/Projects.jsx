@@ -3,7 +3,7 @@ import React from 'react'
 const Projects = () => {
   return (
     
-    <section className={`relative w-full mx-auto p-10 `}style={{background : '#120712'}}> 
+    <section className={`relative w-full mx-auto p-10 overflow-x-hidden -bottom-3`}style={{background : '#120712'}}> 
 <div className="marquee">
 <div className="marqueeContent">
 <h1 className="font-semibold">A SELF TAUGHT SOFTWARE DEVELOPER * A SELF TAUGHT SOFTWARE DEVELOPER *&nbsp;</h1>

@@ -4,7 +4,7 @@ import MotionUp from './MotionUp'; // Ensure the correct path for MotionUp compo
 
 const About = () => {
   return (
-    <section className={`relative w-full mx-auto p-10 -bottom-4 `}style={{background : '#120712'}}> 
+    <section id="about" className={`relative w-full mx-auto p-10 -bottom-4 `}style={{background : '#120712'}}> 
 
 <h1 className="absolute top-48 right-2 text-[10rem] font-bold text-gray-700 opacity-15 z-0">
         About Me

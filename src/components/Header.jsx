@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/kevinRushLogo.png";
+import logo from "../assets/MKlogo.png";
 import { Link } from "react-router-dom";
 
 import { FaBars, FaTimes } from "react-icons/fa"; // Importing the icons
@@ -39,7 +39,7 @@ const Header = () => {
       {/* Logo */}
       <div className="flex flex-shrink-0">
     
-        <img className="mx-5 my-5 w-10" src={logo} alt="logo" />
+        <img className="mx-5 my-5 w-17 h-11" src={logo} alt="logo" />
       
       </div>
 

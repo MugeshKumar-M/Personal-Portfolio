@@ -9,7 +9,7 @@ import MotionUp from './MotionUp'; // Ensure the correct path for MotionUp compo
 const Contact = () => {
   return (
     <section
-      className="relative w-full  mx-auto p-10 overflow-hidden bg-[#120712] bottom-1"
+    id="contact" className="relative w-full  mx-auto p-10 overflow-hidden bg-[#120712] bottom-1"
     >
       <h1 className="absolute top-44 text-[8rem] md:text-[15rem] font-bold text-gray-700 opacity-15 z-0 rotate-90 sm:rotate-0">
         Contact Me

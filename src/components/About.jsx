@@ -1,6 +1,7 @@
 import React from 'react'
 import TiltCard from './TiltCard'
 import MotionUp from './MotionUp'; // Ensure the correct path for MotionUp component
+import { ABOUT } from '../constants';
 
 const About = () => {
   return (
@@ -14,14 +15,13 @@ const About = () => {
    <h2 className=" text-customText">Me</h2>
    </div>
    <div className='font-semibold text-2xl text-left  text-neutral-100 mt-8 sm:w-3/4'>
-   <p>I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!</p>
+   <p>{ABOUT.about}</p>
    </div>
    <MotionUp delay={0.1}>
    <div className='flex flex-col gap-12 mt-9 items-center sm:flex-row'>  
-   <TiltCard text={'UI/UX Developer'}/>
-   <TiltCard text={'Frontend Developer'}/>
-   <TiltCard text={'Backend Developer'}/>
-   <TiltCard text={'web Developer'}/>
+   {ABOUT.titlecard.map((text, index) => (
+            <TiltCard key={index} text={text} icon={ABOUT.cardicons[index]} />
+          ))}
    </div>
    </MotionUp>
 </section>

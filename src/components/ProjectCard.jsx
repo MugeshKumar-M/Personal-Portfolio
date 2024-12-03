@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn,useModal,ModalTrigger } from "./Test";
-import Img from "../assets/test.png"
+import { datalist } from "framer-motion/client";
 // export function ProjectCard({ data }) {
 //   const { setModalData } = useModal();
 
@@ -37,45 +37,36 @@ import Img from "../assets/test.png"
 // }
 
 
-export function ProjectCard() {
-    // const { setModalData } = useModal();
-  
-    const handleSetModalContent = () => {
-    //   setModalData();
-    };
-  
-    return (
-      <PinContainer
-        title="Read More"
-        onClick={handleSetModalContent}
-        className="!w-full flex justify-center h-[360px] "
-      >
-        <div className="tracking-tight text-blue-100">
-          <img
-            src={Img}
-            alt={"Test Title"}
-            height={300}
-            width={500}
-            className="rounded-lg h-[180px] max-w-full mb-5"
-          />
-          <h3 className="line-clamp-1 max-w-xs !pb-2 !m-0 font-bold  text-base text-blue-100">
-            {"Test Title"}
-          </h3>
-          <div className="text-base !m-0 !p-0 font-normal">
-            <p className="text-slate-400 line-clamp-4 ">{"Interactive portfolio built using the latest Next.js 14 for blazing-fast performance and a seamless user experience. Aceternity UI provides a stunning and modern design, while Sanity empowers this with a user-friendly content management system for effortless updates."}</p>
-          </div>
-        </div>
-      </PinContainer>
-    );
-  }
+export function ProjectCard({ onClick,data }) {
 
-function PinContainer({
-  children,
-  title,
-  className,
-  containerClassName,
-  onClick,
-}) {
+  return (
+    <PinContainer
+      title="Read More"
+      onClick={onClick}
+      className="!w-full flex justify-center h-[360px]"
+    >
+      <div className="tracking-tight text-blue-100">
+        <img
+          src={data?.image?.[0] || "/path/to/default-image.jpg"}
+          alt={data?.title || "Project Image"}
+          height={300}
+          width={500}
+          className="rounded-lg h-[180px] max-w-full mb-5"
+        />
+        <h3 className="line-clamp-1 max-w-xs !pb-2 !m-0 font-bold text-base text-blue-100">
+        {data?.title || "Untitled Project"}
+        </h3>
+        <div className="text-base !m-0 !p-0 font-normal">
+          <p className="text-slate-400 line-clamp-4">
+          {data?.description || "No description available."}
+          </p>
+        </div>
+      </div>
+    </PinContainer>
+  );
+}
+
+function PinContainer({ children, title, className, containerClassName, onClick }) {
   const [transform, setTransform] = useState(
     "translate(-50%,-50%) rotateX(0deg)"
   );
@@ -88,45 +79,33 @@ function PinContainer({
   };
 
   return (
-    <ModalTrigger>
-      <button
-        className={cn(
-          "relative group/pin z-40  cursor-pointer w-full block text-left h-[400px]",
-          containerClassName
-        )}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        onClick={() => {
-          if (onClick) {
-            onClick();
-          }
+    <button
+      className={`relative group/pin z-40 cursor-pointer w-full block text-left h-[400px] ${containerClassName}`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onClick={onClick}
+    >
+      <div
+        style={{
+          perspective: "1000px",
+          transform: "rotateX(70deg) translateZ(0deg)",
         }}
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
       >
         <div
-          style={{
-            perspective: "1000px",
-            transform: "rotateX(70deg) translateZ(0deg)",
-          }}
-          className="absolute left-1/2 top-1/2 ml-[0.09375rem] mt-4 -translate-x-1/2 -translate-y-1/2"
+          style={{ transform }}
+          className="absolute left-1/2 p-4 top-1/2 flex justify-start items-start rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)] bg-navbgcolor group-hover/pin:border-white/[0.5] transition duration-700 overflow-hidden w-[20rem] sm:w-[21rem]"
         >
-          <div
-            style={{
-              transform: transform,
-            }}
-            className="absolute left-1/2 p-4 top-1/2  flex justify-start items-start  rounded-2xl  shadow-[0_8px_16px_rgb(0_0_0/0.4)] bg-navbgcolor  group-hover/pin:border-white/[0.5] transition duration-700 overflow-hidden w-[20rem]  sm:w-[21rem]"
-          >
-            <div
-              className={cn(" relative z-50 w-[19rem] sm:w-[20rem]", className)}
-            >
-              {children}
-            </div>
+          <div className={`relative z-50 w-[19rem] sm:w-[20rem] ${className}`}>
+            {children}
           </div>
         </div>
-        <PinPerspective title={title} />
-      </button>
-    </ModalTrigger>
+      </div>
+      <PinPerspective title={title} />
+    </button>
   );
 }
+
 
 function PinPerspective({ title }) {
   return (
@@ -140,7 +119,7 @@ function PinPerspective({ title }) {
               {title}
             </h1>
 
-            <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-red-400/0 via-red-500 to-red-400/0 transition-opacity duration-500 group-hover/btn:opacity-40"></span>
+            {/* <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-red-400/0 via-red-500 to-red-400/0 transition-opacity duration-500 group-hover/btn:opacity-40"></span> */}
           </p>
         </div>
 
